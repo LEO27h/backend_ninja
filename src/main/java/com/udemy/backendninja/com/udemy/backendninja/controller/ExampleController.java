@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RequestMapping("/example")
 public class ExampleController {
@@ -18,7 +21,7 @@ public class ExampleController {
     @GetMapping("/exampleString")
     //@RequestMapping(value = "/exampleString", method = RequestMethod.GET)
     public String exampleString(Model model){
-        model.addAttribute("person", new Person("Leo", 28));
+        model.addAttribute("people", getPeople());
         return EXAMPLE_VIEW;
     }
 
@@ -27,10 +30,19 @@ public class ExampleController {
     //@RequestMapping(value = "/exampleMAV", method = RequestMethod.GET)
     public ModelAndView exampleMAV(){
         ModelAndView mav = new ModelAndView(EXAMPLE_VIEW);
-        mav.addObject("person", new Person("Enrique", 29));
+        mav.addObject("people", getPeople());
 
         //return new ModelAndView(EXAMPLE_VIEW);
         return mav;
+    }
+
+    private List<Person> getPeople(){
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Leo", 28));
+        people.add(new Person("Enrique", 29));
+        people.add(new Person("Sofía", 24));
+        people.add(new Person("Danilo", 1));
+        return people;
     }
 }
 
