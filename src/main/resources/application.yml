@@ -1,4 +1,5 @@
 #Spring properties
+
 spring:
   aop:
     auto: true
@@ -12,4 +13,5 @@ spring:
     dispatch-options-request: true
   couchbase:
     bucket:
+      
       name: default
