@@ -13,3 +13,5 @@
 #  couchbase:
 #    bucket:
 #      name: default
+server:
+  port : 8081

@@ -16,7 +16,9 @@ import java.util.List;
 public class ExampleController {
 
     public static final String EXAMPLE_VIEW = "example";
-
+    
+    
+    //Path resource: localhost:8081/example/exampleString
     //Primera forma (sirve cuando solo hay q redireccionar o insertar pocos datos en las plantillas)
     @GetMapping("/exampleString")
     //@RequestMapping(value = "/exampleString", method = RequestMethod.GET)
@@ -25,6 +27,7 @@ public class ExampleController {
         return EXAMPLE_VIEW;
     }
 
+    //Path resource: localhost:8081/example/exampleMAV
     //Segunda forma (sirve cuando hay q insertar muchos datos en las plantillas)
     @GetMapping("/exampleMAV")
     //@RequestMapping(value = "/exampleMAV", method = RequestMethod.GET)

@@ -13,8 +13,8 @@ public class Example2Controller {
 
     private static final String EXAMPLE2_VIEW = "example2";
 
-    //localhost:8080/example2/request1?nm=Leo
-    //localhost:8080/example2/request1?nm=Enrique
+    //Path resource: localhost:8080/example2/request1?nm=Leo
+    //Path resource: localhost:8080/example2/request1?nm=Enrique
     @GetMapping("/request1")
     public ModelAndView request1(@RequestParam(name = "nm", required = false, defaultValue = "Sin nombre") String name) {
         ModelAndView mav = new ModelAndView(EXAMPLE2_VIEW);
@@ -22,10 +22,10 @@ public class Example2Controller {
         return mav;
     }
 
-    //localhost:8080/example2/request2/Leo
-    //localhost:8080/example2/request2/Enrique
+    //Path resource: localhost:8080/example2/request2/Leo
+    //Path resource: localhost:8080/example2/request2/Enrique
     @GetMapping("/request2/{nm}")
-    public ModelAndView request2(@PathVariable("nm" ) String name){
+    public ModelAndView request2(@PathVariable("nm") String name){
         ModelAndView mav = new ModelAndView(EXAMPLE2_VIEW);
         mav.addObject( "nm_in_model", name);
         return mav;
